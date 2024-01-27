@@ -37,12 +37,16 @@
       &-price {
         font-size: 26px;
         font-weight: 700;
+        align-self: flex-end;
+        background-color: #00000010;
+        padding: 7px 20px;
+        border-radius: 5px;
       }
     }
 
     &-order_button {
       height: 40px;
-      background-color: rgb(49, 141, 228);
+      background-color: #318de4;
       border: none;
       border-radius: 10px;
       cursor: pointer;
@@ -53,7 +57,7 @@
       color: white;
 
       &.active {
-        background-color: rgb(97, 201, 83);
+        background-color: #61c953;
       }
     }
   }

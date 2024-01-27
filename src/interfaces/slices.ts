@@ -1,14 +1,11 @@
 import { ResponseCatalogItem } from "./backend";
+import { CartItemElement } from "./props";
 
 export interface CatalogSliceState {
   products: ResponseCatalogItem[] | null;
 }
 
-export interface CartItem extends ResponseCatalogItem {
-  count: number;
-}
-
 export interface CartSliceState {
-  products: CartItem[];
+  products: CartItemElement[];
   count: number;
 }

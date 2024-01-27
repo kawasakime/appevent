@@ -23,3 +23,11 @@ export interface OrderButtonProps {
 export interface PageHeaderProps {
   title: string;
 }
+
+export interface CartItemElement extends ResponseCatalogItem {
+  count: number;
+}
+
+export interface CartItemProps {
+  item: CartItemElement;
+}

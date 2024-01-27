@@ -14,21 +14,26 @@ const cartSlice = createSlice({
   initialState,
   reducers: {
     addItemToCart(state, { payload }) {
-      const findedIndex = state.products.findIndex((item) => item.id === payload.id);
+      const findedIndex = state.products.findIndex((product) => product.id === payload.id);
 
       if (findedIndex !== -1) {
-        state.products = state.products.map((item, index) =>
-          index === findedIndex ? { ...item, count: item.count + 1 } : item
+        state.products = state.products.map((product, index) =>
+          index === findedIndex ? { ...product, count: product.count + 1 } : product
         );
       } else {
-        state.products = [...state.products, payload];
+        state.products = [...state.products, { ...payload, count: 1 }];
       }
 
       state.count += 1;
       saveCartToLS(state.products);
     },
+    removeItemFromCart(state, { payload }) {
+      state.products = state.products.filter((product) => product.id !== payload);
+      state.count -= state.products.find((product) => product.id === payload)?.count ?? 1;
+      saveCartToLS(state.products);
+    },
   },
 });
 
-export const { addItemToCart } = cartSlice.actions;
+export const { addItemToCart, removeItemFromCart } = cartSlice.actions;
 export default cartSlice.reducer;

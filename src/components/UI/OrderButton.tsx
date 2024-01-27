@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { OrderButtonProps } from "../../interfaces/props";
 import { useAppDispatch } from "../../redux/hooks";
@@ -9,10 +9,6 @@ const OrderButton = ({ item }: OrderButtonProps) => {
 
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
-
-  // useEffect(() => {
-  //   setClicked(false);
-  // }, [item]);
 
   const handleClick = () => {
     if (clicked) {
