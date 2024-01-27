@@ -1,0 +1,25 @@
+.header {
+  background-color: #bec5ad;
+  height: 50px;
+
+  &__navigation {
+    height: 100%;
+
+    &-list {
+      height: 100%;
+      list-style-type: none;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      justify-content: space-between;
+    }
+
+    &__item {
+      transition: opacity 0.5s;
+
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+  }
+}
