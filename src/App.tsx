@@ -1,8 +1,10 @@
 import { RouterProvider } from "react-router-dom";
 import { router } from "./router";
-import "./styles/index.scss";
 import { Provider } from "react-redux";
 import { store } from "./redux/store";
+
+import "./styles/index.scss";
+import "react-loading-skeleton/dist/skeleton.css";
 
 function App() {
   return (
